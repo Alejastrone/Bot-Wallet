@@ -14,17 +14,41 @@ info_ada = client.get_avg_price(symbol='ADAUSDT')
 precio_ada = float(info_ada['price'])
 usdt_ada = ada * precio_ada
 
-bnb = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "BNB"]
-bnb = float(bnb[0])
-info_bnb = client.get_avg_price(symbol='BNBUSDT')
-precio_bnb = float(info_bnb['price'])
-usdt_bnb = bnb * precio_bnb
+avax = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "AVAX"]
+avax = float(avax[0])
+info_avax = client.get_avg_price(symbol='AVAXUSDT')
+precio_avax = float(info_avax['price'])
+usdt_avax = avax * precio_avax
+
+fil = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "FIL"]
+fil = float(fil[0])
+info_fil = client.get_avg_price(symbol='FILUSDT')
+precio_fil = float(info_fil['price'])
+usdt_fil = fil * precio_fil
+
+agix = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "AGIX"]
+agix = float(agix[0])
+info_agix = client.get_avg_price(symbol='AGIXUSDT')
+precio_agix = float(info_agix['price'])
+usdt_agix = agix * precio_agix
+
+fet = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "FET"]
+fet = float(fet[0])
+info_fet = client.get_avg_price(symbol='FETUSDT')
+precio_fet = float(info_fet['price'])
+usdt_fet = fet * precio_fet
 
 btc = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "BTC"]
 btc = float(btc[0])
 info_btc = client.get_avg_price(symbol='BTCUSDT')
 precio_btc = float(info_btc['price'])
 usdt_btc = btc * precio_btc
+
+dot = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "DOT"]
+dot = float(dot[0])
+info_dot = client.get_avg_price(symbol='DOTUSDT')
+precio_dot = float(info_dot['price'])
+usdt_dot = dot * precio_dot
 
 eth = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "ETH"]
 eth = float(eth[0])
@@ -87,17 +111,25 @@ precio_xrp = float(info_xrp['price'])
 usdt_xrp = xrp * precio_xrp
 
 
-total_usdt_criptos = usdt_ada + usdt_btc + usdt_eth + usdt_bnb + usdt_link + usdt_ltc + usdt_matic + usdt_neo + usdt_rune + usdt_sol + usdt_theta + usdt_waves + usdt_xrp
+total_usdt_criptos = usdt_ada + usdt_avax + usdt_btc + usdt_eth + usdt_fil + usdt_fet +usdt_agix + usdt_dot + usdt_link + usdt_ltc + usdt_matic + usdt_neo + usdt_rune + usdt_sol + usdt_theta + usdt_waves + usdt_xrp
 
 usdt = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "USDT"]
 usdt = float(usdt[0])
 
 print(f"ADA = {ada:.5f}")
 print(f"usdt ada = {usdt_ada:.5f}")
-print(f"BNB = {bnb:.5f}")
-print(f"usdt bnb = {usdt_bnb:.5f}")
+print(f"AVAX = {avax:.5f}")
+print(f"usdt avax = {usdt_avax:.5f}")
+print(f"FIL = {fil:.5f}")
+print(f"usdt fil = {usdt_fil:.5f}")
+print(f"FET = {fet:.5f}")
+print(f"usdt fet = {usdt_fet:.5f}")
+print(f"AGIX = {agix:.5f}")
+print(f"usdt agix = {usdt_agix:.5f}")
 print(f"BTC = {btc:.5f}")
 print(f"usdt btc = {usdt_btc:.5f}")
+print(f"DOT = {dot:.5f}")
+print(f"usdt dot = {usdt_dot:.5f}")
 print(f"ETH = {eth:.5f}")
 print(f"usdt eth = {usdt_eth:.5f}")
 print(f"LINK = {link:.5f}")
@@ -126,4 +158,4 @@ print(f"total de usdt = {usdt + total_usdt_criptos:.2f}")
 date = datetime.now()
 year_month = date.strftime('%m %Y')
 with open(f"{year_month} cartera.txt", "a") as TextIOWrapper:
-    TextIOWrapper.write(f'<-[{date}]-[{coin.user}]-\n-[TOTAL USDT = {usdt + total_usdt_criptos:.2f}]\n-[USDT = {usdt:.5f}]\n-[ADA = {usdt_ada:.5f}]\n-[BNB = {usdt_bnb:.5f}]\n-[BTC = {usdt_btc:.5f}]\n-[ETH = {usdt_eth:.5f}]\n-[LINK = {usdt_link:.5f}]\n-[LTC = {usdt_ltc:.5f}]\n-[MATIC = {usdt_matic:.5f}]\n-[NEO = {usdt_neo:.5f}]\n-[RUNE = {usdt_rune:.5f}]\n-[SOL = {usdt_sol:.5f}]\n-[THETA = {usdt_theta:.5f}]\n-[WAVES = {usdt_waves:.5f}]\n-[XRP = {usdt_xrp:.5f}]->\n-------------------------------------------------------------\n')
+    TextIOWrapper.write(f'<-[{date}]-[{coin.user}]-\n-[PRECIO BTC = {precio_btc:.2f}]\n[TOTAL USDT = {usdt + total_usdt_criptos:.2f}]\n-[USDT = {usdt:.5f}]\n-[AGIX = {usdt_agix:.5f} - {agix:.5f}]\n-[FET = {usdt_fet:.5f} - {fet:.5f}]\n-[ADA = {usdt_ada:.5f} - {ada:.5f}]\n-[AVAX = {usdt_avax:.5f} - {avax:.5f}]\n-[FIL = {usdt_fil:.5f} - {fil:.5f}]\n-[BTC = {usdt_btc:.5f} - {btc:.5f}]\n-[DOT = {usdt_dot:.5f} - {dot:.5f}]\n-[ETH = {usdt_eth:.5f} - {eth:.5f}]\n-[LINK = {usdt_link:.5f} - {link:.5f}]\n-[LTC = {usdt_ltc:.5f} - {ltc:.5f}]\n-[MATIC = {usdt_matic:.5f} - {matic:.5f}]\n-[NEO = {usdt_neo:.5f} - {neo:.5f}]\n-[RUNE = {usdt_rune:.5f} - {rune:.5f}]\n-[SOL = {usdt_sol:.5f} - {sol:.5f}]\n-[THETA = {usdt_theta:.5f} - {theta:.5f}]\n-[WAVES = {usdt_waves:.5f} - {waves:.5f}]\n-[XRP = {usdt_xrp:.5f} - {xrp:.5f}]->\n-------------------------------------------------------------\n')
