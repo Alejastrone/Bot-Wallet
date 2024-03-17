@@ -31,3 +31,17 @@ elif coin == "DOT":
     cripto = "DOT"
 elif coin == "AVAX":
     cripto = "AVAX"
+elif coin == "KAVA":
+    cripto = "KAVA"
+elif coin == "UNI":
+    cripto = "UNI"
+elif coin == "ALGO":
+    cripto = "ALGO"
+elif coin == "KAVA":
+    cripto = "KAVA"
+elif coin == "BNB":
+    cripto = "BNB"
+elif coin == "RNDR":
+    cripto = "RNDR"
+elif coin == "XLM":
+    cripto = "XLM"

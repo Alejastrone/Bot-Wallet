@@ -76,7 +76,19 @@ elif coin.cripto == "TRX":
   x = 1
   y = 0.1
   t = 18
-elif coin.cripto == "TRX":
+elif coin.cripto == "UNI":
+  x = 2
+  y = 0.01
+  t = 19
+elif coin.cripto == "KAVA":
   x = 1
   y = 0.1
-  t = 19
+  t = 20
+elif coin.cripto == "XLM":
+  x = 0
+  y = 1
+  t = 21 
+elif coin.cripto == "RNDR":
+  x = 2
+  y = 0.01
+  t = 22
