@@ -1,5 +1,5 @@
 # Api Key, y Api Secret
-wallet = input("Elija la cuenta = ines:1 o alex:2 = ")
+wallet = input("Elija la cuenta = :1 o :2 = ")
 if wallet == "1":
 	user = 
 	API_KEY = 
