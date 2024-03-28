@@ -134,7 +134,7 @@ info_uni = client.get_avg_price(symbol='UNIUSDT')
 precio_uni = float(info_uni['price'])
 usdt_uni = uni * precio_uni
 
-total_usdt_criptos = usdt_ada + usdt_avax + usdt_btc + usdt_eth + usdt_fil + usdt_uni + usdt_rndr + usdt_fet + usdt_agix + usdt_dot + usdt_link + usdt_ltc + usdt_matic + usdt_neo + usdt_rune + usdt_sol + usdt_theta + usdt_waves + usdt_xrp
+total_usdt_criptos = usdt_ada + usdt_avax + usdt_btc + usdt_eth + usdt_fil + usdt_uni + usdt_rndr + usdt_fet + usdt_agix + usdt_dot + usdt_link + usdt_ltc + usdt_matic + usdt_neo + usdt_rune + usdt_sol + usdt_theta + usdt_waves + usdt_xrp + usdt_xlm + usdt_algo
 
 usdt = [b['free'] for b in balanceCripto['balances'] if b['asset'] == "USDT"]
 usdt = float(usdt[0])
