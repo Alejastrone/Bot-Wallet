@@ -40,6 +40,14 @@ print(f"\nUSDT = {usdt:.2f}")
 print(f"Total USDT en criptos = {total_usdt_criptos:.2f}")
 print(f"Total de USDT = {usdt + total_usdt_criptos:.2f}")
 
+# Monto con que empesaron las wallets o clientes
+if apikey.wallet == "1":
+    pln = 3850
+elif apikey.wallet == "2":
+    pln = 3850
+elif apikey.wallet == "3":
+    pln = 1956
+
 # Función para escribir en el archivo
 def escribir_archivo():
     date = datetime.now()
@@ -53,7 +61,7 @@ def escribir_archivo():
             f.write(f'{activo}: {valores_usdt[activo]:.2f}\n')
         f.write(f'USDT: {usdt:.2f}\n')
         f.write(f'Total: {usdt + total_usdt_criptos:.2f}\n')
-        f.write(f'PnL: {((usdt + total_usdt_criptos) - 3850):.2f}\n')
+        f.write(f'PnL: {((usdt + total_usdt_criptos) - pln):.2f}\n')
         f.write('--------------------------------------------------\n')
 
 # Función para mostrar el mensaje en una ventana
@@ -66,7 +74,7 @@ def show_message():
                f"Criptos: {total_usdt_criptos:.2f}\n"
                f"Dólares: {usdt:.2f}\n"
                f"Total: {usdt + total_usdt_criptos:.2f}\n"
-               f"PnL: {((usdt + total_usdt_criptos) - 3850):.2f}\n"
+               f"PnL: {((usdt + total_usdt_criptos) - pln):.2f}\n"
                f"-------------------\nHora: {hour}")
 
     root = tk.Tk()
